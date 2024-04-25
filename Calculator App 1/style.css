@@ -1,0 +1,144 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #00aaff, #00ff6c);
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 2px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
+
+/* Sure, let's break down the provided CSS code step by step:
+
+1. `*, *::before, *::after`: This selector targets all elements in the HTML document, as well as their ::before and ::after pseudo-elements.
+
+2. `box-sizing: border-box;`: This property ensures that the width and height of an element include padding and border, but not the margin. This helps maintain consistency when sizing elements.
+
+3. `font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;`: This property defines the font family to be used for text within the elements. It specifies a prioritized list of font names, and if the browser doesn't support the first font, it moves to the next one.
+
+4. `font-weight: normal;`: This property sets the weight (thickness) of the font to normal, meaning it's neither bold nor light.
+
+5. `body`: This selector targets the `<body>` element of the HTML document.
+
+6. `margin: 0; padding: 0;`: This sets the margin and padding of the `<body>` element to zero, effectively removing any default spacing.
+
+7. `background: linear-gradient(to right, #00aaff, #00ff6c);`: This property creates a linear gradient background for the body, transitioning from #00aaff (a shade of blue) on the left to #00ff6c (a shade of green) on the right.
+
+8. `.calculator-grid`: This targets an element with the class name `calculator-grid`.
+
+9. `display: grid;`: This property specifies that the element should be displayed as a grid container.
+
+10. `justify-content: center;`: This property aligns the grid items along the inline (row) axis at the center of the container.
+
+11. `align-content: center;`: This property aligns the grid items along the block (column) axis at the center of the container.
+
+12. `min-height: 100vh;`: This sets the minimum height of the grid container to be 100% of the viewport height, ensuring that it fills the screen vertically.
+
+13. `grid-template-columns: repeat(4, 100px);`: This property defines the columns of the grid. It creates four columns, each with a width of 100 pixels.
+
+14. `grid-template-rows: minmax(120px, auto) repeat(5, 100px);`: This property defines the rows of the grid. The first row has a minimum height of 120 pixels and grows as needed (auto). The next five rows are each 100 pixels tall.
+
+15. `.calculator-grid > button`: This targets `<button>` elements that are direct children of an element with the class `calculator-grid`.
+
+16. `cursor: pointer;`: This property changes the cursor to a pointer when hovering over the buttons, indicating they are clickable.
+
+17. `font-size: 2rem;`: This sets the font size of the buttons to 2 times the size of the root font size.
+
+18. `border: 2px solid white;`: This adds a 2-pixel white solid border to the buttons.
+
+19. `outline: none;`: This removes the default outline that appears around buttons when they are clicked.
+
+20. `background-color: rgba(255, 255, 255, 0.75);`: This sets the background color of the buttons to a semi-transparent white color.
+
+21. `.calculator-grid > button:hover`: This targets `<button>` elements that are being hovered over within an element with the class `calculator-grid`.
+
+22. `background-color: rgba(255, 255, 255, 0.95);`: This changes the background color of the buttons to a slightly lighter shade of semi-transparent white when hovered over.
+
+23. `.span-two`: This is a custom class that spans two grid columns.
+
+24. `grid-column: span 2;`: This property spans the button across two grid columns.
+
+25. `.output`: This targets an element with the class name `output`.
+
+26. `grid-column: 1 / -1;`: This property spans the output across all columns, starting from the first column to the last column.
+
+27. `background-color: rgba(0, 0, 0, 0.75);`: This sets the background color of the output area to a semi-transparent black color.
+
+28. `display: flex;`: This property sets the display of the output area as a flex container.
+
+29. `align-items: flex-end;`: This aligns the flex items (contents of the output area) along the cross axis (vertically) to the end of the container.
+
+30. `justify-content: space-around;`: This evenly distributes the flex items along the main axis (horizontally) with space around them.
+
+31. `flex-direction: column;`: This sets the direction of the flex container's main axis to be vertical.
+
+32. `padding: 10px;`: This adds 10 pixels of padding to the output area.
+
+33. `word-wrap: break-word;`: This property allows long words to be broken and wrap onto the next line.
+
+34. `word-break: break-all;`: This property specifies that long words should be broken and wrap onto the next line, even within the word itself.
+
+35. `.output .previous-operand`: This targets an element with the class `previous-operand` that is a child of an element with the class `output`.
+
+36. `color: rgba(255, 255, 255, 0.75);`: This sets the text color of the previous operand within the output area to a semi-transparent white color.
+
+37. `font-size: 1.5rem;`: This sets the font size of the previous operand text to 1.5 times the size of the root font size.
+
+38. `.output .current-operand`: This targets an element with the class `current-operand` that is a child of an element with the class `output`.
+
+39. `color: white;`: This sets the text color of the current operand within the output area to white.
+
+40. `font-size: 2.5rem;`: This sets the font size of the current operand text to 2.5 times the size of the root font size.
+
+These CSS rules are designed to style a calculator interface with grid layout, responsive buttons, and a styled output area. */
